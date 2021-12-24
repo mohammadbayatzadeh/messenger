@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Routes } from 'react-router';
+
+//components
+import Login from './components/Login';
+import Chat from './components/Chat';
+import ConfigContextProvider from './context/ConfigContextProvider';
+
+//styles
 import './App.css';
+
+// contexts
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <ConfigContextProvider>
+        <Routes>
+          <Route path="/" element={<Login />} >
+          </Route>
+          <Route path="/chat" element={<Chat />} />
+        </Routes>
+      </ConfigContextProvider>
+    </div >
+  )
+};
 
 export default App;
