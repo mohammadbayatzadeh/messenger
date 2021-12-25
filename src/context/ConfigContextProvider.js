@@ -3,7 +3,7 @@ import { firebaseConfig } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 
 
-const ConfigContext = createContext();
+export const ConfigContext = createContext();
 
 const ConfigContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
